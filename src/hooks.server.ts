@@ -9,6 +9,8 @@ const handleAuth: Handle = async ({ event, resolve }) => {
 		return resolve(event);
 	}
 
+	console.log(sessionToken)
+
 	const { session, user } = await auth.validateSessionToken(sessionToken);
 	if (session) {
 		auth.setSessionTokenCookie(event, sessionToken, session.expiresAt);
