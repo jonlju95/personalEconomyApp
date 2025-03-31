@@ -43,19 +43,23 @@
 			</div>
 		</div>
 	</form>
-	<p style="color: red">{form?.message ?? ''}</p>
+	{#if form?.message ?? ''}
+		<div class="errorMessageContainer">
+			<p>{form?.message ?? ''}</p>
+		</div>
+	{/if}
 </section>
 
 <style lang="scss">
 	.loginSection {
 		position: relative;
-		width: fit-content;
+		width: 22vw;
 		padding: 1rem 3rem 5rem;
 		margin-top: 8rem;
 		border-radius: 12px;
 		box-shadow: 2px 2px 8px -3px #333;
-		background-color: var(--background);
-		border: 1px solid var(--border);
+		background-color: #f0edea;
+		border: 1px solid #c6c7be;
 
 		display: flex;
 		flex-direction: column;
@@ -68,5 +72,15 @@
 		:last-child {
 			margin-left: 1rem;
 		}
+	}
+
+	.errorMessageContainer {
+		background-color: var(--error);
+		border-radius: 12px;
+		padding: 0 0.5rem;
+		margin-top: 2rem;
+		max-width: 100%;
+
+		color: #93000a;
 	}
 </style>
