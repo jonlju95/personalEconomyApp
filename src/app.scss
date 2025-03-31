@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:700|Montserrat:400');
+
+:root {
+	--text: #090c03;
+	--background: #f6f5f3;
+	--border: #e7e5df;
+	--primary: #bcc2ae;
+	--secondary: #afc0bb;
+	--accent: #90a4a7;
+}
+
+html,
+body {
+	margin: 0;
+	max-height: 100%;
+	padding: 0;
+	box-sizing: border-box;
+
+	background: hsla(69, 17%, 84%, 1);
+	background: linear-gradient(315deg, hsla(69, 17%, 84%, 1) 0%, hsla(48, 56%, 96%, 1) 100%);
+	background: -moz-linear-gradient(315deg, hsla(69, 17%, 84%, 1) 0%, hsla(48, 56%, 96%, 1) 100%);
+	background: -webkit-linear-gradient(315deg, hsla(69, 17%, 84%, 1) 0%, hsla(48, 56%, 96%, 1) 100%);
+	background-attachment: fixed;
+}
+
+body {
+	font-family: 'Montserrat';
+	font-weight: 400;
+}
+
+main {
+	margin: 0 138px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Cabin';
+	font-weight: 700;
+}
+
+html {
+	font-size: 100%;
+} /* 16px */
+
+h1 {
+	font-size: 4.21rem; /* 67.36px */
+}
+
+h2 {
+	font-size: 3.158rem; /* 50.56px */
+}
+
+h3 {
+	font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+	font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+	font-size: 1.333rem; /* 21.28px */
+}
+
+small {
+	font-size: 0.75rem; /* 12px */
+}
