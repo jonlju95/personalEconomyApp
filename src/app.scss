@@ -1,13 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=Cabin:700|Montserrat:400');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-	--text: #1a1c16;
-	--background: #fcf9f6;
-	--border: #dcd9d7;
+	/* Colors */
 	--primary: #bcc2ae;
+	--onPrimary: #4a5040;
 	--secondary: #e0e0d6;
-	--accent: #b3c3bf;
+	--onSecondary: #62635b;
+	--tertiary: #b3c3bf;
+	--onTertiary: #42514e;
 	--error: #ffdad6;
+	--onError: #93000a;
+	--background: #f0edea;
+	--text: #1c1c1a;
+	--border: #c6c7be;
+
+	/* Font sizes */
+
+	--fs-800: 4.21rem;
+	--fs-700: 3.158rem;
+	--fs-600: 2.369rem;
+	--fs-500: 1.777rem;
+	--fs-400: 1.333rem;
+	--fs-300: 1rem;
+	--fs-200: 0.75rem;
+
+	/* Font weights */
+	--fw-900: 900;
+	--fw-800: 800;
+	--fw-700: 700;
+	--fw-600: 600;
+	--fw-500: 500;
+	--fw-400: 400;
+	--fw-300: 300;
+	--fw-200: 200;
+	--fw-100: 100;
+
+	/* Font families */
+	--ff-serif: 'Nunito', serif;
+	--ff-sans: 'Cabin', sans-serif;
+
+	/* Sizings */
+
+	/* Box shadows */
+	--elevation1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	--elevation2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	--elevation3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	--elevation4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	--elevation5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 html,
@@ -17,16 +56,24 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 
-	background-color: var(--background);
-}
+	background:
+		radial-gradient(circle at 32.6% 34.65%, #bcc2ae, transparent 100%),
+		radial-gradient(circle at 70.73% 68.75%, #f0edea, transparent 100%),
+		radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%);
 
-body {
-	font-family: 'Montserrat';
-	font-weight: 400;
+	background-attachment: fixed;
 }
 
 main {
 	margin: 0 138px;
+}
+
+body,
+span {
+	font-family: var(--ff-sans);
+	font-weight: var(--fw-400);
+	font-size: var(--fs-300);
+	color: var(--text);
 }
 
 h1,
@@ -34,7 +81,7 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: 'Cabin';
+	font-family: var(--ff-serif);
 	font-weight: 700;
 }
 
@@ -43,25 +90,26 @@ html {
 } /* 16px */
 
 h1 {
-	font-size: 4.21rem; /* 67.36px */
+	font-size: var(--fs-800);
+	color: var(--onPrimary);
 }
 
 h2 {
-	font-size: 3.158rem; /* 50.56px */
+	font-size: var(--fs-700);
+	color: var(--onPrimary);
 }
 
 h3 {
-	font-size: 2.369rem; /* 37.92px */
+	font-size: var(--fs-600);
+	color: var(--onPrimary);
 }
 
 h4 {
-	font-size: 1.777rem; /* 28.48px */
+	font-size: var(--fs-500);
+	color: var(--onPrimary);
 }
 
 h5 {
-	font-size: 1.333rem; /* 21.28px */
-}
-
-small {
-	font-size: 0.75rem; /* 12px */
+	font-size: var(--fs-400);
+	color: var(--onPrimary);
 }

@@ -23,7 +23,10 @@
 		label {
 			display: flex;
 			flex-direction: column;
-			font-weight: 700;
+
+			span {
+				font-weight: var(--fw-600);
+			}
 		}
 
         input {

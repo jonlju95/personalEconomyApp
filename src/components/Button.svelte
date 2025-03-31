@@ -6,7 +6,15 @@
 	};
 </script>
 
-<button {formaction} class="{$$props.class ?? ''}" on:click on:mouseover on:mouseenter on:mouseleave {...buttonProps}>
+<button
+	{formaction}
+	class={$$props.class ?? ''}
+	on:click
+	on:mouseover
+	on:mouseenter
+	on:mouseleave
+	{...buttonProps}
+>
 	<slot />
 </button>
 
@@ -14,24 +22,27 @@
 	button {
 		padding: 0.75rem 1.25rem;
 		border-radius: 12px;
-		
+
 		cursor: pointer;
-		font-family: 'Cabin';
-		font-weight: 700;
-		font-size: medium;
+
+		font-family: var(--ff-sans);
+		font-size: var(--fs-300);
+		font-weight: var(--fw-500);
+
+		box-shadow: var(--elevation2);
 
 		&:hover {
-			background: #c5cab9;
+			opacity: 0.92;
 		}
 
-        &.primaryBtn {
-            border: none;
-            background: var(--primary);
-        }
+		&.primaryBtn {
+			border: none;
+			background-color: var(--primary);
+		}
 
-        &.secondaryBtn {
-            border: none;
-            background: var(--secondary);
-        }
+		&.secondaryBtn {
+			border: none;
+			background-color: var(--secondary);
+		}
 	}
 </style>

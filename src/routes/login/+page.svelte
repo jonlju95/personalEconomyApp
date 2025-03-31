@@ -57,9 +57,9 @@
 		padding: 1rem 3rem 5rem;
 		margin-top: 8rem;
 		border-radius: 12px;
-		box-shadow: 2px 2px 8px -3px #333;
-		background-color: #f0edea;
-		border: 1px solid #c6c7be;
+		box-shadow: var(--elevation1);
+		background-color: var(--background);
+		border: 1px solid var(--border);
 
 		display: flex;
 		flex-direction: column;
