@@ -18,31 +18,25 @@
 	<slot />
 </button>
 
-<style lang="scss">
+<style lang="css">
+	@reference "tailwindcss";
+
 	button {
 		padding: 0.75rem 1.25rem;
 		border-radius: 12px;
 
 		cursor: pointer;
 
-		font-family: var(--ff-sans);
-		font-size: var(--fs-300);
-		font-weight: var(--fw-500);
-
-		box-shadow: var(--elevation2);
-
-		&:hover {
-			opacity: 0.92;
-		}
-
 		&.primaryBtn {
-			border: none;
-			background-color: var(--primary);
+			&:hover {
+				filter: brightness(75%);
+			}
 		}
 
 		&.secondaryBtn {
-			border: none;
-			background-color: var(--secondary);
+			&:hover {
+				background-color: var(--color-secondary-500);
+			}
 		}
 	}
 </style>
