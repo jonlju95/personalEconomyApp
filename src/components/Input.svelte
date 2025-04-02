@@ -11,9 +11,18 @@
 <div class="inputContainer">
 	<label for={inputId}>
 		{#if label}
-			<span>{label}</span>
+			<span class="font-medium">{label}</span>
 		{/if}
-		<input class="bg-primary-contrast-light" {name} id={inputId} class:error {type} {placeholder} bind:value on:blur />
+		<input
+			class="bg-surface-contrast-light border-1 border-surface-200 focus:border-primary-900 focus:border-2"
+			{name}
+			id={inputId}
+			class:error
+			{type}
+			{placeholder}
+			bind:value
+			on:blur
+		/>
 	</label>
 </div>
 
@@ -25,13 +34,16 @@
 		label {
 			display: flex;
 			flex-direction: column;
-
 		}
 
 		input {
 			margin-top: 0.25rem;
 			padding: 0.75rem;
 			border-radius: 12px;
+
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 </style>

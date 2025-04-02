@@ -1,10 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme default {
 	--text-scaling: 1.125;
 	--base-font-color: var(--color-surface-950);
 	--base-font-color-dark: var(--color-surface-50);
-	--font-sans: "Cabin", "sans-serif";
+	--font-sans: 'Cabin', 'sans-serif';
 	--base-font-size: inherit;
 	--base-line-height: inherit;
 	--base-font-weight: normal;
@@ -12,7 +12,7 @@
 	--base-letter-spacing: 0em;
 	--heading-font-color: inherit;
 	--heading-font-color-dark: inherit;
-	--font-serif: "Nunito", "sans-serif";
+	--font-serif: 'Nunito', 'sans-serif';
 	--heading-font-weight: bold;
 	--heading-font-style: normal;
 	--heading-letter-spacing: inherit;
@@ -228,22 +228,26 @@
 }
 
 @layer base {
-  h1 {
-    font-size: calc(6rem*1.125);
-  }
-  h2 {
-    font-size: calc(5rem*1.125);
-  }
-  h3 {
-    font-size: calc(4rem*1.125);
-  }
-  h4 {
-    font-size: calc(3rem*1.125);
-  }
-  h5 {
-    font-size: calc(2rem*1.125);
-  }
-  h6 {
-    font-size: calc(1rem*1.125);
-  }
+	body {
+		@apply text-primary-950;
+	}
+
+	h1 {
+		font-size: calc(6rem * 1.125);
+	}
+	h2 {
+		font-size: calc(5rem * 1.125);
+	}
+	h3 {
+		font-size: calc(4rem * 1.125);
+	}
+	h4 {
+		font-size: calc(3rem * 1.125);
+	}
+	h5 {
+		font-size: calc(2rem * 1.125);
+	}
+	h6 {
+		font-size: calc(1rem * 1.125);
+	}
 }

@@ -15,8 +15,8 @@
 	let touchedFields = { touchedUsername, touchedPassword };
 </script>
 
-<section class="bg-surface-contrast-light">
-	<h2 class="font-serif">Personal economy</h2>
+<section class="loginSection bg-surface-100">
+	<h4 class="font-serif mb-4">Login</h4>
 	<form method="POST" use:enhance>
 		<Input
 			name="username"
