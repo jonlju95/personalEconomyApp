@@ -6,32 +6,37 @@
 	};
 </script>
 
-<button {formaction} class="{$$props.class ?? ''}" on:click on:mouseover on:mouseenter on:mouseleave {...buttonProps}>
+<button
+	{formaction}
+	class={$$props.class ?? ''}
+	on:click
+	on:mouseover
+	on:mouseenter
+	on:mouseleave
+	{...buttonProps}
+>
 	<slot />
 </button>
 
-<style lang="scss">
+<style lang="css">
+	@reference "tailwindcss";
+
 	button {
 		padding: 0.75rem 1.25rem;
 		border-radius: 12px;
-		
-		cursor: pointer;
-		font-family: 'Cabin';
-		font-weight: 700;
-		font-size: medium;
 
-		&:hover {
-			background: #c5cab9;
+		cursor: pointer;
+
+		&.primaryBtn {
+			&:hover {
+				filter: brightness(75%);
+			}
 		}
 
-        &.primaryBtn {
-            border: none;
-            background: var(--primary);
-        }
-
-        &.secondaryBtn {
-            border: none;
-            background: var(--secondary);
-        }
+		&.secondaryBtn {
+			&:hover {
+				background-color: var(--color-secondary-500);
+			}
+		}
 	}
 </style>

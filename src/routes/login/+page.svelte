@@ -15,8 +15,8 @@
 	let touchedFields = { touchedUsername, touchedPassword };
 </script>
 
-<section class="loginSection">
-	<h2>Personal economy</h2>
+<section class="loginSection bg-surface-100 col-span-4 mt-[33%]">
+	<h4 class="font-serif mb-4">Login</h4>
 	<form method="POST" use:enhance>
 		<Input
 			name="username"
@@ -36,10 +36,20 @@
 		/>
 		<div class="buttonContainer">
 			<div>
-				<Button type="submit" formaction="?/register" class="primaryBtn" on:click>Register</Button>
+				<Button
+					type="submit"
+					formaction="?/register"
+					class="secondaryBtn border border-solid border-secondary-500"
+					on:click>Register</Button
+				>
 			</div>
 			<div>
-				<Button type="submit" formaction="?/login" class="primaryBtn" on:click>Login</Button>
+				<Button
+					type="submit"
+					formaction="?/login"
+					class="primaryBtn bg-primary-500 text-primary-contrast-500"
+					on:click>Login</Button
+				>
 			</div>
 		</div>
 	</form>
@@ -50,16 +60,14 @@
 	{/if}
 </section>
 
-<style lang="scss">
+<style lang="css">
+	@reference "tailwindcss";
+
 	.loginSection {
-		position: relative;
-		width: 22vw;
+		height: fit-content;
 		padding: 1rem 3rem 5rem;
-		margin-top: 8rem;
 		border-radius: 12px;
-		box-shadow: 2px 2px 8px -3px #333;
-		background-color: #f0edea;
-		border: 1px solid #c6c7be;
+		box-shadow: var(--elevation1);
 
 		display: flex;
 		flex-direction: column;
