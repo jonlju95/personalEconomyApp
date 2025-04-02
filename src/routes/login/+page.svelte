@@ -15,7 +15,7 @@
 	let touchedFields = { touchedUsername, touchedPassword };
 </script>
 
-<section class="loginSection bg-surface-100">
+<section class="loginSection bg-surface-100 col-span-4 mt-[33%]">
 	<h4 class="font-serif mb-4">Login</h4>
 	<form method="POST" use:enhance>
 		<Input
@@ -64,10 +64,8 @@
 	@reference "tailwindcss";
 
 	.loginSection {
-		position: relative;
-		width: 22vw;
+		height: fit-content;
 		padding: 1rem 3rem 5rem;
-		margin-top: 8rem;
 		border-radius: 12px;
 		box-shadow: var(--elevation1);
 

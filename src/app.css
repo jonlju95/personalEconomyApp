@@ -1,22 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import "../static/global-styles.css";
+@import '../static/global-styles.css';
 
 html,
 body {
 	margin: 0;
-	max-height: 100%;
-	padding: 0;
+	height: 100%;
+	width: 100%;
 	box-sizing: border-box;
-
 	background:
 		radial-gradient(circle at 34.01% 74.12%, #82915f, transparent 69%),
 		radial-gradient(circle at 18.44% 19.3%, #809591, transparent 100%),
 		radial-gradient(circle at 71.72% 39.04%, #8f9283, transparent 100%),
 		radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%);
 
-	background-attachment: fixed;
-}
-
-main {
-	margin: 0 138px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
