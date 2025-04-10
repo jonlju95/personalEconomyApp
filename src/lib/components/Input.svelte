@@ -14,7 +14,7 @@
 			<span class="font-medium">{label}</span>
 		{/if}
 		<input
-			class="bg-surface-contrast-light border-1 border-surface-200 focus:border-primary-900 focus:border-2"
+			class="bg-surface-contrast-light border-1 border-surface-200 focus:border-primary-900 focus:border-1"
 			{name}
 			id={inputId}
 			class:error

@@ -1,27 +1,37 @@
 import type { Handle } from '@sveltejs/kit';
-import * as auth from '$lib/server/auth.js';
+import {
+	authenticateUser,
+	deleteSessionTokenCookie,
+	sessionCookieName,
+	setSessionTokenCookie,
+	validateSessionToken
+} from '$lib/server/auth.js';
+import { getClient } from '$lib/server/db.js';
 
-const handleAuth: Handle = async ({ event, resolve }) => {
-	const sessionToken = event.cookies.get(auth.sessionCookieName);
+export const handle: Handle = async ({ event, resolve }) => {
+	const dbConn = await getClient();
+
+	event.locals.dbConn = dbConn;
+
+	event.locals.user = await authenticateUser(event);
+
+	const sessionToken = event.cookies.get(sessionCookieName);
 	if (!sessionToken) {
 		event.locals.user = null;
 		event.locals.session = null;
 		return resolve(event);
 	}
 
-	console.log(sessionToken)
+	event.locals.session = await validateSessionToken(event, sessionToken);
 
-	const { session, user } = await auth.validateSessionToken(sessionToken);
-	if (session) {
-		auth.setSessionTokenCookie(event, sessionToken, session.expiresAt);
+	if (event.locals.session) {
+		setSessionTokenCookie(event, sessionToken, new Date());
 	} else {
-		auth.deleteSessionTokenCookie(event);
+		deleteSessionTokenCookie(event);
 	}
 
-	event.locals.user = user;
-	event.locals.session = session;
+	const response = await resolve(event);
+	dbConn.release();
 
-	return resolve(event);
+	return response;
 };
-
-export const handle: Handle = handleAuth;

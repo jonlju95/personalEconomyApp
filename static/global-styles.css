@@ -233,21 +233,27 @@
 	}
 
 	h1 {
+		@apply font-serif;
 		font-size: calc(6rem * 1.125);
 	}
 	h2 {
+		@apply font-serif;
 		font-size: calc(5rem * 1.125);
 	}
 	h3 {
+		@apply font-serif;
 		font-size: calc(4rem * 1.125);
 	}
 	h4 {
+		@apply font-serif;
 		font-size: calc(3rem * 1.125);
 	}
 	h5 {
+		@apply font-serif;
 		font-size: calc(2rem * 1.125);
 	}
 	h6 {
+		@apply font-serif;
 		font-size: calc(1rem * 1.125);
 	}
 }

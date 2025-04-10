@@ -19,23 +19,24 @@
 </button>
 
 <style lang="css">
-	@reference "tailwindcss";
+	@reference "../../app.css";
 
-	button {
-		padding: 0.75rem 1.25rem;
-		border-radius: 12px;
+	.btn {
+		@apply py-3 px-5 rounded-xl cursor-pointer transition-[0.2s];
 
-		cursor: pointer;
+		&.btn-primary {
+			@apply bg-primary-500 text-primary-contrast-500;
 
-		&.primaryBtn {
 			&:hover {
-				filter: brightness(75%);
+				@apply brightness-75;
 			}
 		}
 
-		&.secondaryBtn {
+		&.btn-secondary {
+			@apply border-2 border-secondary-500;
+
 			&:hover {
-				background-color: var(--color-secondary-500);
+				@apply bg-secondary-500;
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import Button from '../../components/Button.svelte';
-	import Input from '../../components/Input.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Input from '$lib/components/Input.svelte';
 	import type { ActionData } from './$types';
 
 	let { form }: { form: ActionData } = $props();
@@ -15,7 +15,7 @@
 	let touchedFields = { touchedUsername, touchedPassword };
 </script>
 
-<section class="loginSection bg-surface-100 col-span-4 mt-[33%]">
+<section class="loginSection bg-surface-100 col-span-4 mt-[33%] p-8 pb-12">
 	<h4 class="font-serif mb-4">Login</h4>
 	<form method="POST" use:enhance>
 		<Input
@@ -54,7 +54,7 @@
 		</div>
 	</form>
 	{#if form?.message ?? ''}
-		<div class="errorMessageContainer">
+		<div class="bg-error-50 text-error-950 rounded-base p-4 mt-8">
 			<p>{form?.message ?? ''}</p>
 		</div>
 	{/if}
@@ -65,7 +65,6 @@
 
 	.loginSection {
 		height: fit-content;
-		padding: 1rem 3rem 5rem;
 		border-radius: 12px;
 		box-shadow: var(--elevation1);
 
@@ -80,15 +79,5 @@
 		:last-child {
 			margin-left: 1rem;
 		}
-	}
-
-	.errorMessageContainer {
-		background-color: var(--error);
-		border-radius: 12px;
-		padding: 0 0.5rem;
-		margin-top: 2rem;
-		max-width: 100%;
-
-		color: #93000a;
 	}
 </style>
