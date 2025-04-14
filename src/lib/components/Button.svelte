@@ -18,7 +18,7 @@
 	<slot />
 </button>
 
-<style lang="css">
+<style>
 	@reference "../../app.css";
 
 	.btn {

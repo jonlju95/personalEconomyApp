@@ -1,6 +1,7 @@
 import { type RequestEvent } from '@sveltejs/kit';
 import { v4 as uuidv4 } from 'uuid';
 import type { PoolClient } from 'pg';
+import type { Session, User } from '$lib/types';
 
 const DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -51,22 +52,19 @@ export async function createSession(dbConn: PoolClient, sessionId: string, userI
 
 export async function validateSessionToken(event: RequestEvent, sessionId: string) {
 	const { dbConn } = event.locals;
-	const result = await dbConn.query(
-		`SELECT id, user_id, expires_at FROM session WHERE id = $1`,
-		[sessionId]
-	);
+	const result = await dbConn.query(`SELECT id, user_id, expires_at FROM session WHERE id = $1`, [
+		sessionId
+	]);
 
 	if (!result.rows[0]) {
 		return { session: null };
 	}
 
-	const {
-		session = {
-			id: result.rows[0].id,
-			userId: result.rows[0].user_id,
-			expiresAt: result.rows[0].expires_at
-		}
-	} = {};
+	const session: Session = {
+		id: result.rows[0].id,
+		userId: result.rows[0].user_id,
+		expiresAt: result.rows[0].expires_at
+	};
 
 	const sessionExpired = Date.now() >= session.expiresAt.getTime();
 	if (sessionExpired) {
@@ -95,7 +93,7 @@ export async function invalidateSession(dbConn: PoolClient, sessionId: string) {
 export function setSessionTokenCookie(event: RequestEvent, token: string, expiresAt: Date) {
 	event.cookies.set(sessionCookieName, token.toString(), {
 		maxAge: expiresAt.getTime(),
-		path: '/',
+		path: '/'
 	});
 }
 

@@ -15,9 +15,9 @@ export type Category = {
 };
 
 export type Session = {
-	id?: string;
-	userId?: string;
-	expiresAt?: Date;
+	id: string;
+	userId: string;
+	expiresAt: Date;
 };
 
 export type Expense = {

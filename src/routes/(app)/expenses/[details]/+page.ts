@@ -1,11 +1,21 @@
+import type { Expense } from '$lib/types';
+import type { Actions } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = ({ params }) => {
-    return {
-        title: capitalizeTitle(params.details)
-    }
+export const load: PageLoad = async (event) => {
+	const response = await event.fetch('/api/expenses/[details]', {
+		method: 'GET',
+		headers: { id: event.params.details, 'Content-Type': 'application/json' }
+	});
+
+	const res = await response.json();
+	const expense: Expense = { ...res.expense };
+
+	return { expense };
 };
 
-function capitalizeTitle(title: string): string {
-    return title.charAt(0).toUpperCase() + title.slice(1);
+export const actions: Actions = {
+	save: async (event) => {
+		return event;
+	}
 }

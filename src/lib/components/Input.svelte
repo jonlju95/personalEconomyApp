@@ -11,7 +11,7 @@
 <div class="inputContainer">
 	<label for={inputId}>
 		{#if label}
-			<span class="font-medium">{label}</span>
+			<span class="font-bold">{label}</span>
 		{/if}
 		<input
 			class="bg-surface-contrast-light border-1 border-surface-200 focus:border-primary-900 focus:border-1"
