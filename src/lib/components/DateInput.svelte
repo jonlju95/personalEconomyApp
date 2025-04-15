@@ -1,25 +1,8 @@
 <script lang="ts">
-	import type { FocusEventHandler, HTMLInputTypeAttribute } from 'svelte/elements';
-
-	let {
-		name,
-		inputId,
-		type = 'text',
-		value = $bindable(),
-		error,
-		label,
-		placeholder,
-		onblur
-	}: {
-		name: string;
-		inputId: string;
-		type: HTMLInputTypeAttribute;
-		value: string | number;
-		error?: string;
-		label?: string;
-		placeholder?: string;
-		onblur: FocusEventHandler<HTMLInputElement>;
-	} = $props();
+	export let name = '';
+	export let inputId = '';
+	export let value = '';
+	export let label = '';
 </script>
 
 <div class="inputContainer">
@@ -28,14 +11,13 @@
 			<span class="font-bold">{label}</span>
 		{/if}
 		<input
+			type="date"
 			class="inputField"
 			{name}
 			id={inputId}
-			class:error
-			{type}
-			{placeholder}
 			bind:value
-			{onblur}
+			placeholder="dd-mm-yyyy"
+			on:blur
 		/>
 	</label>
 </div>

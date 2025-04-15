@@ -39,7 +39,7 @@
 	<div class="absolute bottom-2 w-full">
 		<form method="POST" use:enhance>
 			<Button
-				class="tertiaryBtn bg-tertiary-500 text-tertiary-contrast-50"
+				class="btn btn-tertiary bg-tertiary-500 text-tertiary-contrast-50"
 				type="submit"
 				formaction="?/logout"
 				on:click>Logout</Button
